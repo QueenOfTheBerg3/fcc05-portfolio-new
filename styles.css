@@ -1,0 +1,207 @@
+:root {
+    --mbackgr1: #daa520; /* daa520 */
+    --mbackgr2: #ba72f5; /* da72a5 */
+    --navbackgr: #254637; /* 655667 */
+    --navcolor1: #d9d0d6; /* d9d0d6 */
+    --navcolor2: #080807; /* 282827 */
+    --shadow1: #000;
+    --shadow2: #fff;
+    --topborder: #452345;
+
+    --mainwidth: 95%;
+    --largewidth: 85%;
+    --navwidth: 90%;
+    --navheight: 3rem; /* for spacing below fixed navbar */
+}
+body {
+    position: static;
+    background-color: #fac560;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%; /* default 16px */
+    box-sizing: border-box;
+    line-height: 120%;
+    margin-top: 0;
+    padding-top: 0;
+    max-zoom: 150%;
+}
+#main-div {
+    background-color: #daa520; /* for very old/basic browsers */
+    background:linear-gradient(30deg,#ba72f5 10%,#daa520);
+    background:linear-gradient(30deg, var(--mbackgr2), var(--mbackgr1));
+    width: var(--mainwidth);
+    max-width: 99vw;
+    /*height: auto;*/
+    margin: 0 auto 2.6rem; /* top 0 sides auto bottom 1.6rem */
+    padding: 1.4rem;
+    padding-top: 0;
+    
+}
+* {
+    position: static;
+    margin-top: 0;
+    padding-top: 0;
+}
+.divide {
+    padding: var(--navheight);
+}
+p {
+    line-height: 130%;
+}
+a {
+    text-decoration: none;
+    background: var(--navbackgr);
+    color: var(--navcolor1);
+    margin: 0.3rem;
+    padding: 0.3rem;
+}
+a:hover {
+    text-decoration-line: overline underline;
+    font-style: oblique;
+}
+#navbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-flow: row wrap;
+    overflow:auto;
+    width: var(--mainwidth);
+    height: var(--navheight);
+    align-items: center;
+    justify-content: center;
+    line-height: 180%;
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+}
+#navbar a {
+    flex-basis: 23%;
+    margin: 0.3rem;
+    margin-top: 0;
+    padding: 0.3rem;
+    color: var(--navcolor1);
+    text-shadow: 0 0 4px var(--shadow1); /* shadow to 'outline' the text */
+    text-align: center;
+    font-weight: bold;
+}
+#profile-link {
+    display: block;
+    margin: 0.4rem auto;
+    text-align: center;
+}
+#profpic {
+    display: block;
+    width: 70%;
+    max-width: 70vw;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 5% auto;
+    padding: 0 8%;
+    clear: both;
+}
+#welcome-section {
+    height: 100vh;
+}
+
+#projects {
+    /*border: 2px dashed blue;*/
+    margin-top: 1rem;
+}
+#projects p, #projects ul {
+    display: block;
+    margin: 0.9rem auto;
+    padding: 0.3rem;
+}
+#projects ul {
+    width: 50%; /* for browsers that don't deal with max-content */
+    width: max-content;
+}
+#projects p {
+    text-align: center;
+}
+#projects li {
+    display: block;
+    list-style: none;
+}
+.project-title {
+    margin: 0.5rem;
+    padding: 0.2rem;
+    font-weight: bold;
+}
+
+h1 {
+    /*background: linear-gradient(30deg, var(--mbackgr2) 70%, var(--mbackgr1));*/
+    border-top: 3px solid var(--topborder);
+    margin: 0. 2rem auto;
+    padding: 0.8rem;
+    text-align: center;
+    height: var(--navheight);
+    vertical-align: middle;
+    line-height: 120%;
+}
+h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin: 0.8rem auto;
+    padding: 0.1rem;
+}
+
+.quicklink {
+    background: none;
+    /*border: 2px dashed #382738;*/
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 28px;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 100%;
+    max-width: 5%;
+    max-height: 5%;
+}
+#top {
+    right: 0px;
+}
+#learn {
+    right:40px;
+}
+footer {
+    background: linear-gradient(30deg, var(--mbackgr1) 70%, var(--mbackgr2));
+    width: var(--mainwidth);
+    height: auto;
+    margin: 1.3rem auto 1.6rem;
+    padding: 1.4rem;
+    font-size: 0.7rem;
+    text-align: center;
+}
+footer p {
+    line-height: 100%;
+}
+@media only screen and (max-width:768px) {
+    :root {
+        --mainwidth: 98%;
+        --navwidth: 99%;
+        --navheight: 25%; /* for spacing below fixed navbar */
+    }
+    #main-div {
+        max-width: 98vw;
+        margin: 0;
+        padding: 0;
+    }
+    #navbar {
+        flex-flow: row wrap;
+    }
+    #navbar > a {
+        width: 25%;
+        height: max-content;
+        background: none !important;
+        color: var(--navcolor2);
+        text-shadow: 0 0 4px var(--shadow2); /* shadow to 'outline' the text */
+        /*overflow:auto;*/
+    }
+}
+@media only screen and (min-width:1068px) {
+    :root {
+        --mainwidth: var(--largewidth);
+    }
+
+}
