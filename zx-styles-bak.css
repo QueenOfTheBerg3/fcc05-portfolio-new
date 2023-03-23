@@ -16,9 +16,8 @@
     --thin5: 0.5rem;
     --thin8: 0.8rem;
     --thin9: 0.9rem; /* between headers */
-    --thick18: 1.8rem;
-    --fixer: 0.1rem;
-    --fixeb: 0.3rem;
+    --fixer: 0;
+    --fixeb: 0;
 }
 body {
     position: static;
@@ -52,8 +51,7 @@ body {
     padding-top: 0;
 }
 .divide {
-    display: block;
-    padding-top: var(--navheight);
+    padding: var(--navheight);
 }
 p {
     line-height: 130%;
@@ -135,18 +133,10 @@ a:active {
     display: block;
     list-style: none;
 }
-.project-tile {
+.project-title {
     margin: var(--thin5);
     padding: var(--thin2);
     font-weight: bold;
-}
-#learning li {
-    line-height: 120%;
-    margin: 0 var(--thick18) var(--thin2);
-}
-#learning p, #learning ul {
-    margin: 0 var(--thick18) var(--thin2);
-    padding: var(--thin8);
 }
 h1 {
     /*background: linear-gradient(30deg, var(--mbackgr2) 70%, var(--mbackgr1));*/
@@ -154,6 +144,7 @@ h1 {
     margin: var(--thin2) auto;
     padding: var(--thin9);
     text-align: center;
+    /*height: var(--navheight);*/
     height:max-content;
     vertical-align: middle;
     line-height: 120%;
@@ -196,25 +187,15 @@ footer p {
 }
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 @media only screen and (max-width:300px) {
-    :root {
-        --navheight: max-content;
-    }
     #navbar {
         flex-flow: column nowrap;
-        margin: 0 auto;
     }
     #navbar a {
         flex-basis: 80%;
         margin: 0 auto;
     }
-    .divide {
-        padding-top: 5rem;
-    }
-    #profpic {
-        display: none;
-    }
 }
-    @media only screen and (max-width:768px) {
+    @media only screen and (max-width:568px) {
     :root {
         --mainwidth: 98%;
         --footwidth: 89%;
@@ -224,9 +205,8 @@ footer p {
         --thin5: 4px;
         --thin8: 8px;
         --thin9: 12px;
-        --thick18:12px;
-        --fixer: 1.1rem;
-        --fixeb: 1.2rem;
+        --fixer: 1.5rem;
+        --fixeb: 1.5rem;
     }
     #main-div {
         margin: 0;
@@ -252,9 +232,6 @@ footer p {
         color: var(--navcolor2);
         text-shadow: 0 0 4px var(--shadow2); /* shadow to 'outline' the text */
         /*overflow:auto;*/
-    }
-    #profpic {
-        opacity: 20%;
     }
 }
 /* = = = = = = = = = = = = = = = = = = = = = = = = = = = */
